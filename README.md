@@ -72,13 +72,12 @@ Some modules need setting up. A header in each module gives notes on setup.
 wifi_entries.dat holds WiFi connections credentials that holds a List of one line Entries.  
 A single Entry format is like:   
 SSID::PASSWORD::Region  
- 
 SSID and PASSWORD can contain a large range of characters including a space character.  
 Region is a single uppercase letter. L=London time and P=Paris time (E=Edit)  
 The file is saved in ESP32 flash.  
 The first Entry should be like: EPlace::PASSWORD::E  
 To edit following entries put your smartphone into Portable Hotspot mode and setup a temporary hotspot with EPlace as SSID and password to your choosing.  
-AMCLOK scans down the List and if it finds it can connect t EPlace then it will setup an edit method on your phone's browser.  
+AMCLOK scans down the List and if it finds it can connect to EPlace then it will setup an edit method on your phone's browser.  
 
 
 
