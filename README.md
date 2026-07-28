@@ -31,6 +31,8 @@ To summarise:
 BLUE light tends to encourage alertness and activity.  
 RED (dim) or warm light is more conducive to winding down and sleep.  
 
+![The assembled equipment](displayEnteringNiteMode.jpg)
+
 ## Main Components
 
 - ESP32
