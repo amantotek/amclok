@@ -36,7 +36,14 @@ Clock display fading from daytime operation to nighttime operation
 
 ## Main Components
 
-- ESP32
+- Touchscreen 2.8inch TFT LCD Display ESP-WROOM-32 ILI9341 Resistive Touch Module 240 * 320 ESP32-2432S028R Bluetooth WIFI
+320x240 pixels (cost £10.59 Nov 2025)
+
+- HC-SR501 PIR Motion Sensor Module Infrared IR Pyroelectric Detector ESP32 Nano (cost £2.95 Nov 2025)
+
+- Cable USB A or C to USB C to fit ESP32 board.
+
+- Case. We used a spectacle case that was almost transparent. It works well on travels.
 
 
 ## Software
@@ -62,11 +69,18 @@ Clock display fading from daytime operation to nighttime operation
 Some modules need setting up. A header in each module gives notes on setup.
 
 1) **modWiFi**  
-wifi_entries.dat holds WiFi connections credentials. For a fixed system just one line Entry is needed. The format is like:
-SSID::PASSWORD::Region
-SSID and PASSWORD can contain a large range of characters including a space character.
-Region is a single uppercase letter. L=London time and P=Paris time 
-The file is then saved in ESP32 flash.
+wifi_entries.dat holds WiFi connections credentials that holds a List of one line Entries.  
+A single Entry format is like:   
+SSID::PASSWORD::Region  
+ 
+SSID and PASSWORD can contain a large range of characters including a space character.  
+Region is a single uppercase letter. L=London time and P=Paris time (E=Edit)  
+The file is saved in ESP32 flash.  
+The first Entry should be like: EPlace::PASSWORD::E  
+To edit following entries put your smartphone into Portable Hotspot mode and setup a temporary hotspot with EPlace as SSID and password to your choosing.  
+AMCLOK scans down the List and if it finds it can connect t EPlace then it will setup an edit method on your phone's browser.  
+
+
 
 2) **modDateTime**  
 Write the daylight saving string defined at the start of the module
