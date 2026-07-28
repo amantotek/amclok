@@ -63,7 +63,23 @@ Clock display fading from daytime operation to nighttime operation
 
 ## Installation
 
-[Explain how to install the MicroPython files on the ESP32.]
+Plug AMCLOK lead into laptop USB port. Open Thonny. At bottom right expect to see similar to "Micropython (ESP32) * USB Serial @ /dev/ttyUSB0"  
+On lefthand under 'MicroPython device' a list of files saved on flash should show.  
+On power up the special file main.py is run; it is sufficient that this contains just one line 'import amclok'.  
+Before any file manipulation stop program execution with "Run/Interrupt execution".  
+To temporarily disable main.py auto start comment out it's content to '#import amclok' remembering to restore it before going operational.  
+With main.py disabled test run by ensuring amclok.py is showing and currently selected then use Run/Run current script.  
+
+To see all filenames loaded in flash run below in Thonny Shell noting both lines can be entered together:  
+import os  
+print(os.listdir())  
+
+'''
+>>> import os
+print(os.listdir())
+['Unispace12x24.c', 'amclok.py', 'boot.py', 'dst.rule', 'ili9341.py', 'main.py', 'modDateTime.py', 'modFaultLog.py', 'modWiFi.py', 'wifi_entries.dat', 'xglcd_font.py']
+>>>
+''' 
 
 ## Configuration
 Some modules need setting up. A header in each module gives notes on setup.
