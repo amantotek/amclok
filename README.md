@@ -74,12 +74,12 @@ To see all filenames loaded in flash run below in Thonny Shell noting both lines
 import os  
 print(os.listdir())  
 
-'''
+```
 >>> import os
 print(os.listdir())
 ['Unispace12x24.c', 'amclok.py', 'boot.py', 'dst.rule', 'ili9341.py', 'main.py', 'modDateTime.py', 'modFaultLog.py', 'modWiFi.py', 'wifi_entries.dat', 'xglcd_font.py']
 >>>
-''' 
+```
 
 ## Configuration
 Some modules need setting up. A header in each module gives notes on setup.
