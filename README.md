@@ -75,10 +75,13 @@ SSID::PASSWORD::Region
 SSID and PASSWORD can contain a large range of characters including a space character.  
 Region is a single uppercase letter. L=London time and P=Paris time (E=Edit)  
 The file is saved in ESP32 flash.  
-The first Entry should be like: EPlace::PASSWORD::E  
-To edit following entries put your smartphone into Portable Hotspot mode and setup a temporary hotspot with EPlace as SSID and password to your choosing.  
+The first Entry should always be as below.
+When travelling to edit the List put your smartphone into Portable Hotspot mode and setup a temporary hotspot with EPlace as SSID and password to your choosing.  
 AMCLOK scans down the List and if it finds it can connect to EPlace then it will setup an edit method on your phone's browser.  
-
+So initially, assuming UK based, fill wifi_entries.dat with two Entries/lines as below:  
+EPlace::PASSWORD1::E  
+SSID::PASSWORD2::L  
+SSID and PASSWORD2 are  typically as setup on your home router.  
 
 
 2) **modDateTime**  
