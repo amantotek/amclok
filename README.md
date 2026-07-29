@@ -53,13 +53,19 @@ Clock display fading from daytime operation to nighttime operation
 
 ## Circuit
 
-[Describe the connections here.]
+![ESP32 + LCD pinout](ESP32-2432S028Rpinout.jpg)
+ESP32-2432S028R  
+
+![PIR sensor pinout](HC-SR501-PIRsensor.jpg)
+HC-SR501 PIR Sensor
 
 
 
 ## How It Works
 
-[Brief explanation of the operation.]
+On startup AMCLOK logs onto the designated WiFi Hotspot periodically syncronising the ESP32 onboard clock.
+The Passive Infra Red (PIR) detector illuminates the screen showing the time for a few seconds.
+A seconds bar shows how far into each minute we are.
 
 ## Installation
 
@@ -70,16 +76,6 @@ Before any file manipulation stop program execution with "Run/Interrupt executio
 To temporarily disable main.py auto start comment out it's content to '#import amclok' remembering to restore it before going operational.  
 With main.py disabled test run by ensuring amclok.py is showing and currently selected then use Run/Run current script.  
 
-To see all filenames loaded in flash run below in Thonny Shell noting both lines can be entered together:  
-import os  
-print(os.listdir())  
-
-```
->>> import os
-print(os.listdir())
-['Unispace12x24.c', 'amclok.py', 'boot.py', 'dst.rule', 'ili9341.py', 'main.py', 'modDateTime.py', 'modFaultLog.py', 'modWiFi.py', 'wifi_entries.dat', 'xglcd_font.py']
->>>
-```
 Before leaving Thonny do "Run/Disconnect" then unplug the serial USB port.  
 
 ## Configuration
@@ -104,14 +100,25 @@ SSID and PASSWORD2 are  typically as setup on your home router.
 Write the daylight saving string defined at the start of the module
 into a file named "dst.rule" and save in ESP32 flash.
 
-## Checksums
-$ md5sum filename
-29f2f1a34cb06445ecaa94c2fd9a9074  amclokV015.py  
-4a18a3774c4eb155312a4c7f1c8ccca0  modDateTimeV010.py  
-a3625445adba19dd96c9c30ec52c5d64  modFaultLogV001.py #imported but not used  
-8f3724022d35732e6761accb9a089f9b  modWiFiV017.py  
+## Files in flash and Checksums
+To see all filenames loaded in flash run below in Thonny Shell noting both lines can be entered together:  
+import os  
+print(os.listdir())  
 
-Possibles to be added in future:  
+```
+>>> import os  
+print(os.listdir()) 
+['Unispace12x24.c', 'amclok.py', 'boot.py', 'dst.rule', 'ili9341.py', 'main.py', 'modDateTime.py', 'modKeepAlive.py', 'modWiFi.py', 'wifi_entries.dat', 'xglcd_font.py']
+>>> 
+```
+
+$ md5sum filename  
+8c5d657886f1768bf67091619c46ed11  Unispace12x24.c  
+ee00f014f306727d53b6e4e51974273d  amclokV016.py
+7bcccd3ba4a55f93898ed3dbf646b8ab  ili9341.py  
+6e6b172c27e95ef5001bb5d41e179b62  main.py  
+4a18a3774c4eb155312a4c7f1c8ccca0  modDateTimeV010.py  
 d8fa630fd1014bdc0ac31bc1f3fc39ad  modKeepAliveV002.py  
-53f0f050d1e5e759ea5a427d67cee8bd  modOTAserverV003.py  
+8f3724022d35732e6761accb9a089f9b  modWiFiV017.py  
+ee88333dcbb909062574abbf0c62c0e8  xglcd_font.py
 
