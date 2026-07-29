@@ -80,6 +80,7 @@ print(os.listdir())
 ['Unispace12x24.c', 'amclok.py', 'boot.py', 'dst.rule', 'ili9341.py', 'main.py', 'modDateTime.py', 'modFaultLog.py', 'modWiFi.py', 'wifi_entries.dat', 'xglcd_font.py']
 >>>
 ```
+Before leaving Thonny do "Run/Disconnect" then unplug the serial USB port.  
 
 ## Configuration
 Some modules need setting up. A header in each module gives notes on setup.
@@ -99,11 +100,18 @@ EPlace::PASSWORD1::E
 SSID::PASSWORD2::L  
 SSID and PASSWORD2 are  typically as setup on your home router.  
 
-
 2) **modDateTime**  
 Write the daylight saving string defined at the start of the module
 into a file named "dst.rule" and save in ESP32 flash.
 
-## Version History
+## Checksums
+$ md5sum filename
+29f2f1a34cb06445ecaa94c2fd9a9074  amclokV015.py  
+4a18a3774c4eb155312a4c7f1c8ccca0  modDateTimeV010.py  
+a3625445adba19dd96c9c30ec52c5d64  modFaultLogV001.py #imported but not used  
+8f3724022d35732e6761accb9a089f9b  modWiFiV017.py  
 
-[Optional notes about significant changes.]
+Possibles to be added in future:  
+d8fa630fd1014bdc0ac31bc1f3fc39ad  modKeepAliveV002.py  
+53f0f050d1e5e759ea5a427d67cee8bd  modOTAserverV003.py  
+
