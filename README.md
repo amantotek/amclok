@@ -62,13 +62,13 @@ Clock display fading from daytime operation to nighttime operation
 
 ## Circuit
 
-![ESP32 + LCD pinout](ESP32-2432S028Rpinout.jpg)
+![ESP32 + LCD pinout](ESP32-2432S028Rpinout.jpg)  
 ESP32-2432S028R  
 
-![PIR sensor pinout](HC-SR501-PIRsensor.jpg)
+![PIR sensor pinout](HC-SR501-PIRsensor.jpg)  
 HC-SR501 PIR Sensor  
 
-![AMCLOKcircuit](AMCLOKcircuit.jpg)
+![AMCLOKcircuit](AMCLOKcircuit.jpg)  
 AMCLOK Circuit  
 
 ## How It Works
