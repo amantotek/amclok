@@ -10,7 +10,16 @@ The assembled project showing daytime display.
 
 ## Project Overview
 
-This project uses an ESP32 to display accurate time, perfect for a bedside environment.
+This project uses an ESP32/LCD combo board to display accurate time, perfect for a bedside environment.
+
+## Features
+
+* Automatic NTP time synchronisation
+* Day and night display modes with fade in
+* Motion-activated display short period activation
+* Smartphone browser used to configure Wi-Fi credentials
+* Daylight-saving adjustment automatic
+* Modular MicroPython design
 
 ## Importance of Sleep
 
@@ -64,23 +73,23 @@ AMCLOK Circuit
 
 ## How It Works
 
-On startup AMCLOK logs onto the designated WiFi Hotspot periodically syncronising the ESP32 onboard clock.
+On startup AMCLOK logs onto the designated WiFi Hotspot periodically synchronising the ESP32 onboard clock.
 The Passive Infra Red (PIR) detector illuminates the screen showing the time for a few seconds.
 A seconds bar shows how far into each minute we are.
 
 ## Installation
 
 Plug AMCLOK lead into laptop USB port. Open Thonny. At bottom right expect to see similar to "Micropython (ESP32) * USB Serial @ /dev/ttyUSB0"  
-On lefthand under 'MicroPython device' a list of files saved on flash should show.  
+On left-hand under 'MicroPython device' a list of files saved on flash should show.  
 On power up the special file main.py is run; it is sufficient that this contains just one line 'import amclok'.  
 Before any file manipulation stop program execution with "Run/Interrupt execution".  
-To temporarily disable main.py auto start comment out it's content to '#import amclok' remembering to restore it before going operational.  
+To temporarily disable main.py auto start comment out its content to '#import amclok' remembering to restore it before going operational.  
 With main.py disabled test run by ensuring amclok.py is showing and currently selected then use Run/Run current script.  
 
-Before leaving Thonny do "Run/Disconnect" then unplug the serial USB port.  
+Before leaving Thonny do "Run/Disconnect", then unplug the serial USB port.  
 
 ## Configuration
-Some modules need setting up. A header in each module gives notes on setup.
+Some modules need setting up. A header in each module gives notes on set up.
 
 1) **modWiFi**  
 wifi_entries.dat holds WiFi connection credentials. Contents comprise a List of one line Entries.    
@@ -115,11 +124,11 @@ print(os.listdir())
 
 $ md5sum filename  
 8c5d657886f1768bf67091619c46ed11  Unispace12x24.c  
-ee00f014f306727d53b6e4e51974273d  amclokV016.py
+ee00f014f306727d53b6e4e51974273d  amclokV016.py  
 7bcccd3ba4a55f93898ed3dbf646b8ab  ili9341.py  
 6e6b172c27e95ef5001bb5d41e179b62  main.py  
 4a18a3774c4eb155312a4c7f1c8ccca0  modDateTimeV010.py  
 d8fa630fd1014bdc0ac31bc1f3fc39ad  modKeepAliveV002.py  
 8f3724022d35732e6761accb9a089f9b  modWiFiV017.py  
-ee88333dcbb909062574abbf0c62c0e8  xglcd_font.py
+ee88333dcbb909062574abbf0c62c0e8  xglcd_font.py  
 
